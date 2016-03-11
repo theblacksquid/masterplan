@@ -1,5 +1,7 @@
 (define replace-split
     (lambda (str rep sub) 
+    ; replace-split: a procedure that takes str (type: string) and 
+    ; returning a list with all instances of rep is replaced by sub.
     (begin
         ; ls: the internal representation fo the string
         ; being processed. I don't like using let
