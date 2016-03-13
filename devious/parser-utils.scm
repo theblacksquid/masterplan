@@ -1,4 +1,4 @@
-(define replace-split
+(define replace-split ; Rework in progress, do not use
     (lambda (str rep sub) 
     (begin
         ; ls: the internal representation fo the string
@@ -30,4 +30,14 @@
     )
     )   
 )
+
+(define count2sp
+    (lambda (ls seed)
+        (if (or (eqv? (car (cdr ls)) #\space) (eqv? (cdr ls) '())) 
+            seed 
+            (count2sp (cdr ls) (+ 1 seed))
+        )
+    )
+)
+
 
