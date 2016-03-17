@@ -60,3 +60,23 @@
         (iterate ls k '())
 )))
 
+(define list-tail
+    (lambda (ls k)
+    (begin
+        (define limit (length ls))
+        (define iterate
+            (lambda (ls-chars index seed)
+                (if (or (= index limit)
+                        (eqv? (cdr ls-chars) '())
+                    )
+                    seed
+                    (cons 
+                        (list-ref ls-chars index)
+                        (iterate 
+                            ls-chars
+                            (+ index 1)
+                            seed
+                        ))))
+        )
+        (iterate ls k '())
+)))
