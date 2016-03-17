@@ -41,3 +41,21 @@
 )
 
 
+(define list-head
+	(lambda (ls k)
+	(begin 
+		(define iterate
+			(lambda (ls-chars index seed)
+				(if (or (= index 0)
+						(eqv? (cdr ls-chars) '())
+					)
+					seed
+					(cons 
+						(car ls-chars)
+						(iterate
+							(cdr ls-chars)
+							(- index 1)
+							seed
+						)))))
+		(iterate ls k '())
+)))
