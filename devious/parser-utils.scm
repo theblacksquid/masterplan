@@ -56,7 +56,7 @@
 							(cdr ls-chars)
 							(- index 1)
 							seed
-						)))))
+		)))))
 		(iterate ls k '())
 )))
 ; some comment
