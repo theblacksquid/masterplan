@@ -29,7 +29,7 @@
         )
     )
     )   
-)
+);
 
 (define count2sp
     (lambda (ls seed)
