@@ -80,3 +80,19 @@
         )
         (iterate ls k '())
 )))
+
+(define tokenize ; Does not work, spits out it's native language of Ancient Vulcan
+    (lambda (chars)
+    (begin
+        (define ls-chars (string->list chars))
+        (define range (count2sp ls-chars 1))
+        (define iterate
+            (lambda (a-list seed)
+                (if (eqv? (cdr a-list) '())
+                    seed
+                    (cons
+                        (list->string (list-head a-list range))
+                        (iterate (list-tail a-list range) seed)
+                    ))))
+        (iterate ls-chars '())
+)))
